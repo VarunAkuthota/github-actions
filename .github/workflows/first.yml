@@ -27,6 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Decrypt file
+        run: apt-get update | apt-get install ca-certificates
         run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $HOME/secret.json secret.json.gpg
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
