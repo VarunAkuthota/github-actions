@@ -27,8 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Decrypt file
-        run: gpg --quiet --batch --yes --decrypt 
-        --passphrase="$PASSPHRASE" --output $HOME/secret.json 
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $HOME/secret.json 
+        secret.json.gpg
         secret.json.gpg
         env:
           PASSPHRASE: ${{secrets.PASSPHRASE}}
